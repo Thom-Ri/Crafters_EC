@@ -1,43 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import ItemCard from './ItemCard';
+import MateriaTradicional from './MaterialesData';
 
-function ItemList() {
-    const materiaTradicional = [
-        {title:"Pincel",id:1,price:160 },
-        {title:"Lapiz",id:2,price:100 },
-        {title:"Acrilico",id:3,price:120 },
-        {title:"Bastidor",id:4,price:800 },
-        {title:"Sketchbook",id:5,price:1500 }
-    ];
+
+function ItemList({category}) {
     
     const [materials, setmaterials] = useState([])
     
     useEffect(() => {
       getMaterials()
-    }, [])
+    }, [category])
     
     
     const getMaterials = () => {
-        const materialPromise = new Promise( (resolve, reject) => {
-            setTimeout(() => {
-                resolve(materiaTradicional)    
-            }, 2000);
+        const materialPromise = new Promise( (resolve, reject) => {       
+            resolve(MateriaTradicional)    
         })
     
         materialPromise.then(
           data => {
-              setmaterials(data)
-              console.log(data)
+            if(category){
+                setmaterials(data.filter(mat => mat.categoria == category))
+            }else{
+                setmaterials(data)
+            }
+            
           }
-        )
-        
+        )    
         
     }
     return(
         <>
         <div>Itemlist</div>
         {materials.map((mat) => 
-            <ItemCard key={mat.id} mati={mat}/>
+            <ItemCard key={mat.id} item={mat}/>
+
         )}
     </>
     )

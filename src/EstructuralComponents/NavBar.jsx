@@ -5,12 +5,12 @@ function NavBar() {
   return (
     <>
     <div>
-        <h1>CRAFTERS</h1>
+        <Link to='/'>CRAFTERS</Link>
         {/* LOGO */}
     </div>
     <div>
         <Link to='/'> Inicio</Link>
-        <Link to='lista'>lista</Link>
+        <Link to='Categoria'>lista de productos</Link>
     </div>
     </>
   )

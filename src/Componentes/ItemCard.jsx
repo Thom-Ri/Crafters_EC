@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ItemCard({mati}) {
+function ItemCard({item:mat}) {
   return (
-    <div key={mati.id}>
+    <div key={mat.id}>
         <ul>
-            <li>{mati.title}</li>
-            <li>{mati.price}</li>
-            <li><Link to={`/materiales/${mati.id}`}>Detalle de producto</Link></li>
+            <li>{mat.title}</li>
+            <li>{mat.price}</li>
+            <li><Link to={`/Categoria/${mat.categoria}`}>productos similares</Link></li>
+            <li><Link to={`/materiales/${mat.id}`} item={mat}>Detalle del producto</Link></li>
         </ul>
     </div> 
   )
