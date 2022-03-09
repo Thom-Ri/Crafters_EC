@@ -1,3 +1,4 @@
+// import Pincel from './src/Componentes/Pincel.jpg'
 const MateriaTradicional = [
     {title:"Pincel",id:1,price:160,categoria:"tradicional"},
     {title:"I-pen",id:2,price:500,categoria:"Digital"},
