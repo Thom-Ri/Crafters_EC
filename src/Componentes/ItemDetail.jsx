@@ -1,18 +1,48 @@
-import React from 'react'
-import { MateriaTradicional } from "./MaterialesData";
+import React, { useEffect, useState } from 'react'
+import MateriaTradicional from './MaterialesData';
 
-function ItemDetail() {
+function ItemDetail({id}) {
+
+  const [materialInfo, setmaterialInfo] = useState([])
+
+  useEffect(() => {
+    getMaterial()
+  }, [id])
+  
+
+  const getMaterial = () =>{
+    const materialPromise = new Promise( (res, rej) => {
+      res (MateriaTradicional)
+    })
+    materialPromise.then(
+      data => {
+        if(id){
+          setmaterialInfo(data.filter(mat => mat.id == id))
+          console.log(materialInfo)
+        }else{
+          setmaterialInfo(data)
+        }
+        
+      }
+    )
+  }  
+  
+
+
   return (
     <>
-    <div>Este es el detalle del producto</div>
-     <ul>
-       <li>Esta es la imagen de tu producto</li>
-       <li>Este es el titulo de tu producto</li>
-       <li>Este es el precio de tu producto </li>
-       <li>Esta es la categoria de tu producto</li>
-     </ul>
+      {materialInfo.map((mat)=>(
+        <div key={mat.id}>
+          <ul>
+            <li><h2>{mat.title}</h2></li>
+            <li>$ {mat.price}</li>
+            <li>Categoria : {mat.categoria}</li>
+          </ul>
+        </div>
+      ))}
     </>
   )
+  
 }
 
 export default ItemDetail

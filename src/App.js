@@ -6,6 +6,7 @@ import ItemDetail from './Componentes/ItemDetail';
 import ItemListContainer from './Componentes/ItemListContainer';
 import Index from './EstructuralComponents/Index';
 import NavBar from './EstructuralComponents/NavBar';
+import ItemDetailContainer from './Componentes/ItemDetailContainer';
 
 
 function App() {
@@ -16,10 +17,10 @@ function App() {
             <Route index element={<Index/>}></Route>
             {/* <Route path='lista' element={<ItemListContainer/>}></Route> */}
             <Route path='Categoria' element={<ItemListContainer/>}>
-              <Route path=':category' element={<ItemDetail/>}></Route>
+              <Route path=':category' element={<ItemDetailContainer/>}></Route>
             </Route>
             <Route path='materiales'>
-              <Route path=':id' element={<ItemDetail/>}></Route>
+              <Route path=':id' element={<ItemDetailContainer/>}></Route>
             </Route>
         </Routes>
       </BrowserRouter>
