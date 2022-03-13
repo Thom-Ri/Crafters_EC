@@ -7,11 +7,14 @@ import ItemListContainer from './Componentes/ItemListContainer';
 import Index from './EstructuralComponents/Index';
 import NavBar from './EstructuralComponents/NavBar';
 import ItemDetailContainer from './Componentes/ItemDetailContainer';
+import { CartContextProvider } from './Componentes/CartContextProvider';
+import Cart from './Componentes/Cart';
 
 
 function App() {
   return (
-    <BrowserRouter>
+    <CartContextProvider>
+      <BrowserRouter>
         <NavBar/>
         <Routes>
             <Route index element={<Index/>}></Route>
@@ -22,8 +25,10 @@ function App() {
             <Route path='materiales'>
               <Route path=':id' element={<ItemDetailContainer/>}></Route>
             </Route>
+            <Route path='Carrito' element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
+    </CartContextProvider>
   );
 }
 
