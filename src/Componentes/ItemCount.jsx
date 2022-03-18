@@ -6,7 +6,6 @@ function ItemCount({stock, addToCart}) {
     const addToCount = () =>{
         if(Count < stock) {
             setCount (Count + 1)
-            console.log(Count)
         }
     }
     const SubstractToCount = () =>{

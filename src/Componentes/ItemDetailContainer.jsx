@@ -20,7 +20,6 @@ function ItemDetailContainer() {
       data => {
         if(id){
           setmaterialInfo(data.filter(mat => mat.id == id))
-          console.log(materialInfo)
         }else{
           setmaterialInfo(data)
         }
@@ -34,7 +33,7 @@ function ItemDetailContainer() {
   return (
     <>
       {materialInfo.map((mat)=>(
-        <ItemDetail item={mat}/>
+        <ItemDetail key={mat.id} item={mat}/>
       ))}
     </>
   )
