@@ -3,12 +3,9 @@ import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 
 function ItemListContainer() {
-
-  const{category} = useParams()
-
   return (
     <div>
-      <ItemList category={category}/>
+      <ItemList/>
     </div>
   )
 }

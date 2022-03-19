@@ -14,12 +14,10 @@ function Cart() {
     const ItemsPromise = new Promise( (res, rej) => {
       res (itemsCart)
     })
-    ItemsPromise.then(
-      data => {
+    ItemsPromise.then( data => {
         setitemsInCart(data)
-        console.log(data)
-      }
-    )
+        console.log(itemsInCart)
+    })
   }  
 
 
@@ -43,7 +41,7 @@ function Cart() {
                     <div className="mt-8">
                       <div className="flow-root">
                         <ul role="list" className="-my-6 divide-y divide-gray-200">
-                          {itemsInCart.map((mat) => (
+                           {itemsInCart.map((mat) => (
                               <li key={mat.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img

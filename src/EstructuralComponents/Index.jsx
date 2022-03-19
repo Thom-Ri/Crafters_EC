@@ -1,6 +1,4 @@
-import React from 'react'
-import NavBar from './NavBar'
-
+import React, { useEffect } from 'react'
 function Index() {
   return (
     <div className="relative bg-white">

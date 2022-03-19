@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
-// import ItemCard from './ItemCard';
-import MateriaTradicional from './MaterialesData';
-import { Link } from 'react-router-dom'
 import '../Firebase/FirebaseClient'
 import {getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import { async } from '@firebase/util';
+import { Link } from 'react-router-dom';
 
+function CategoryItemsList({category}) {
 
-function ItemList() {
-    
     const [materials, setmaterials] = useState([])
     
     useEffect( async () => {
@@ -16,17 +13,23 @@ function ItemList() {
         let listaDeProductos = []
         const querySnapshot = await getDocs(collection(db, "Productos"));
         querySnapshot.forEach((doc) => {
-        listaDeProductos.push(doc.data())
-        setmaterials(listaDeProductos)
-    });
+            listaDeProductos.push(doc.data())
+            if(category){
+                setmaterials(listaDeProductos.filter(mat => mat.categoria == category)) 
+                console.log(materials)
+            }else{
+                console.log("Se hizo lo que se pudo")
+            };
+    
+        });
      
     }, [])
     
-    
-    
-    return(
-        <>
-            <div className="bg-white">
+
+
+  return (
+    <>
+        <div className="bg-white">
                 <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                     <h2 className="text-2xl font-extrabold tracking-tight text-gray-900">Nuestros productos</h2>
                     <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
@@ -50,11 +53,9 @@ function ItemList() {
                         ))}
                     </div>    
                 </div>     
-            </div>    
-        </>
-    )
-    
-  
+            </div>
+    </>
+  )
 }
 
-export default ItemList
+export default CategoryItemsList
