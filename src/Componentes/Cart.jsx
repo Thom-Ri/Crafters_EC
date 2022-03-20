@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import CartContext from './CartContextProvider';
 function Cart() {
 
@@ -37,9 +38,11 @@ function Cart() {
 
                                       <div className="mt-10">
                                         <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                                          <button className="mx-80 mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                            Seguir comprando
-                                          </button>
+                                          <Link to={"/"}>
+                                            <button className="mx-80 mt-6 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                              Seguir comprando
+                                            </button>
+                                          </Link> 
                                         </dl>
                                       </div>
                                     </div>
