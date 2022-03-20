@@ -16,7 +16,6 @@ function Cart() {
     })
     ItemsPromise.then( data => {
         setitemsInCart(data)
-        console.log(itemsInCart)
     })
   }  
 
