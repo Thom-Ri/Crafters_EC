@@ -13,6 +13,7 @@ import CategoryItems from './Componentes/CategoryItems';
 
 
 function App() {
+  
   return (
     <CartContextProvider>
       <BrowserRouter>

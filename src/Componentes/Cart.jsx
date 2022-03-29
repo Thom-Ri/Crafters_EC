@@ -29,10 +29,10 @@ function Cart() {
                                       <div className="lg:text-center">
                                         <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Carrito de Compras</h2>
                                         <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                                         Este carrito esta vacio!!
+                                         Este carrito está vacio!!
                                         </p>
                                         <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                                          Continua comprando y ve el estatus de tu pedido al agregar productos al carrito
+                                          Continua comprando y ve el status de tu compra al agregar productos al carrito
                                         </p>
                                       </div>
 
@@ -86,7 +86,7 @@ function Cart() {
                                                 </div>
                                                 <div className="flex flex-1 items-end justify-between text-sm">
                                                   <p className="text-gray-500">Qty {mat.quantity}</p>
-
+                                                  <p className="ml-4 text-gray-500">Total: {mat.price*mat.quantity}</p>
                                                   <div className="flex">
                                                     <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
                                                       Remove

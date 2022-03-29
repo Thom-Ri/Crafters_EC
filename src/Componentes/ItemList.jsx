@@ -17,9 +17,8 @@ function ItemList() {
         const querySnapshot = await getDocs(collection(db, "Productos"));
         querySnapshot.forEach((doc) => {
         listaDeProductos.push(doc.data())
-        setmaterials(listaDeProductos)
     });
-     
+        setmaterials(listaDeProductos)
     }, [])
     
     

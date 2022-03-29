@@ -16,7 +16,6 @@ function CategoryItemsList({category}) {
             listaDeProductos.push(doc.data())
             if(category){
                 setmaterials(listaDeProductos.filter(mat => mat.categoria == category)) 
-                console.log(materials)
             }else{
                 console.log("Se hizo lo que se pudo")
             };
@@ -36,7 +35,7 @@ function CategoryItemsList({category}) {
                         {materials.map((mat) => (
                             <div key={mat.id} className="group relative">
                                 <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                    <img src="" alt=""
+                                    <img src={mat.img} alt=""
                                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                                     />
                                 </div>
