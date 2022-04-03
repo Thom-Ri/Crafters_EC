@@ -19,7 +19,7 @@ function Cart() {
         setitemsInCart(data)
     })
   }  
-
+  
 
 
   return (
@@ -85,10 +85,10 @@ function Cart() {
                                                   </div>
                                                 </div>
                                                 <div className="flex flex-1 items-end justify-between text-sm">
-                                                  <p className="text-gray-500">Qty {mat.quantity}</p>
+                                                  <p className="text-gray-500">Cantidad: {mat.quantity}</p>
                                                   <p className="ml-4 text-gray-500">Total: {mat.price*mat.quantity}</p>
                                                   <div className="flex">
-                                                    <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                                    <button type="button"  className="font-medium text-indigo-600 hover:text-indigo-500">
                                                       Remove
                                                     </button>
                                                   </div>

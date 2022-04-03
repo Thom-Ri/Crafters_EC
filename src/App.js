@@ -10,6 +10,7 @@ import { CartContextProvider } from './Componentes/CartContextProvider';
 import Cart from './Componentes/Cart';
 import ItemList from './Componentes/ItemList';
 import CategoryItems from './Componentes/CategoryItems';
+import Footer from './EstructuralComponents/Footer';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             </Route>
             <Route path='Carrito' element={<Cart/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CartContextProvider>
   );

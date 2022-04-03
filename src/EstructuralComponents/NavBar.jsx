@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CartContext from '../Componentes/CartContextProvider'
 import Icon from "../media/Icon.png"
-
+import Logo from "../media/LogoCrafter.png"
 function NavBar() {
 
   const {itemsCart} = useContext(CartContext)
@@ -14,7 +14,7 @@ function NavBar() {
             <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <Link to='/'>
-                  <img className="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt=""></img>
+                  <img className="h-8 w-auto sm:h-24" src={Logo} alt=""></img>
                 </Link>
               </div>
               <nav className="hidden md:flex space-x-10">
