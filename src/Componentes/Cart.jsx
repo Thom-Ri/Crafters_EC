@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CartContext from './CartContextProvider';
 function Cart() {
 
-  const {itemsCart} = useContext(CartContext)
+  const {itemsCart,removeItem} = useContext(CartContext)
 
   const [itemsInCart, setitemsInCart] = useState([])
 
@@ -19,6 +19,11 @@ function Cart() {
         setitemsInCart(data)
     })
   }  
+
+  function removingItem(id){
+    const item = itemsCart.find(product => product.id === id)
+    removeItem(item)
+  }
   
 
 
@@ -88,7 +93,7 @@ function Cart() {
                                                   <p className="text-gray-500">Cantidad: {mat.quantity}</p>
                                                   <p className="ml-4 text-gray-500">Total: {mat.price*mat.quantity}</p>
                                                   <div className="flex">
-                                                    <button type="button"  className="font-medium text-indigo-600 hover:text-indigo-500">
+                                                    <button type="button" onClick={()=>removingItem(mat.id)} className="font-medium text-indigo-600 hover:text-indigo-500">
                                                       Remove
                                                     </button>
                                                   </div>

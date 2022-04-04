@@ -20,18 +20,19 @@ export function CartContextProvider({children}){
     }
 
 
-    // function removeItem(item){
-    //     if(isIteminCart(item.id)){
-    //         console.log("Se está ejecutando removeitem")
-    //         let index = itemsCart.findIndex(i => i.id === item.id);
-    //         let copyCart = [...itemsCart]
-    //         copyCart.splice([index - 1], 1)
-    //         setItemsCart(copyCart)
-            
-    //     }else{
-    //         console.log("Se está ejecutando removeitem2")
-    //     }
-    // }
+    function removeItem(item){
+        if(isIteminCart(item.id)){
+            console.log("Se está ejecutando removeitem")
+            let index = itemsCart.findIndex(i => i.id === item.id);
+            let copyCart = [...itemsCart]
+            copyCart.splice([index - 1], 1)
+            setItemsCart(copyCart)
+            console.log(itemsCart)
+        
+        }else{
+            console.log("Se está ejecutando removeitem2")
+        }
+    }
 
     function clearCart(){
         setItemsCart([])
@@ -43,7 +44,7 @@ export function CartContextProvider({children}){
 
     return(
         <>
-            <CartContext.Provider value={{addItem, itemsCart,clearCart}}>
+            <CartContext.Provider value={{addItem,removeItem, itemsCart,clearCart}}>
                 {children}
             </CartContext.Provider>
         </>

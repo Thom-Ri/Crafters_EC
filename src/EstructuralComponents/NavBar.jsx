@@ -1,12 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import CartContext from '../Componentes/CartContextProvider'
 import Icon from "../media/Icon.png"
 import Logo from "../media/LogoCrafter.png"
+import CartBadge from './CartBadge'
 function NavBar() {
 
   const {itemsCart} = useContext(CartContext)
+  const [itemsInCart, setitemsInCart] = useState([])
 
+  useEffect(() => {
+    getItems()
+    
+  }, [])
+
+  const getItems = () =>{
+    const ItemsPromise = new Promise( (res, rej) => {
+      res (itemsCart)
+    })
+    ItemsPromise.then( data => {
+        setitemsInCart(data)
+    })
+  }
 
   return (
     <>
@@ -26,7 +41,7 @@ function NavBar() {
               <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <Link to={'Carrito'}>
                 <img src={Icon} alt="" style={{backgroundColor: itemsCart.length == 0 ? "rgb(228 235 245)" : "rgb(255 255 255)"}}  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full text-base font-medium text-white"/>
-                <span className='bg-red-500 text-red-100 py-1 px-1.5 text-xs float-right rounded-full'>0</span>
+                <CartBadge items={itemsInCart}/>
               </Link>
               </div>
             </div>
