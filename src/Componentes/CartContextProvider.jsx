@@ -27,7 +27,6 @@ export function CartContextProvider({children}){
             let copyCart = [...itemsCart]
             copyCart.splice([index - 1], 1)
             setItemsCart(copyCart)
-            console.log(itemsCart)
         
         }else{
             console.log("Se está ejecutando removeitem2")

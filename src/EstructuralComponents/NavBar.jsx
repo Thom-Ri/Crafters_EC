@@ -11,8 +11,7 @@ function NavBar() {
 
   useEffect(() => {
     getItems()
-    
-  }, [])
+  }, [itemsCart])
 
   const getItems = () =>{
     const ItemsPromise = new Promise( (res, rej) => {
@@ -20,6 +19,7 @@ function NavBar() {
     })
     ItemsPromise.then( data => {
         setitemsInCart(data)
+        console.log(itemsInCart)
     })
   }
 

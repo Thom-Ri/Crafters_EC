@@ -9,7 +9,7 @@ function Cart() {
 
   useEffect(() => {
     getItems()
-  }, [])
+  }, [itemsCart])
 
   const getItems = () =>{
     const ItemsPromise = new Promise( (res, rej) => {
@@ -17,6 +17,7 @@ function Cart() {
     })
     ItemsPromise.then( data => {
         setitemsInCart(data)
+        console.log(itemsInCart)
     })
   }  
 

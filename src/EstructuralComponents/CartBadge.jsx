@@ -6,7 +6,7 @@ function CartBadge({items}) {
     
     useEffect(() => {
       findQuantity()
-    }, [])
+    }, [items])
     
 
     function findQuantity(){
