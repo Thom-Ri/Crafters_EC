@@ -10,7 +10,9 @@ function CartBadge({items}) {
     
 
     function findQuantity(){
-        let qty = items.map(product => items.quantity);
+        console.log(items)
+        let qty = items.map(items => items.quantity);
+        console.log(qty)
         let totalQty = qty.reduce((a, b) => a + Number(b), 0)
         setquantity(totalQty)
         console.log(totalQty)
