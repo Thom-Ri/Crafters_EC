@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import CartContext from './CartContextProvider';
+import PriceCalculator from './PriceCalculator';
 function Cart() {
 
   const {itemsCart,removeItem} = useContext(CartContext)
@@ -25,9 +26,6 @@ function Cart() {
     const item = itemsCart.find(product => product.id === id)
     removeItem(item)
   }
-  
-
-
   return (
     <>
       {itemsInCart.length == 0 && <div className="py-12 bg-white">
@@ -87,12 +85,12 @@ function Cart() {
                                                     <h3>
                                                       {mat.title}
                                                     </h3>
-                                                    <p className="ml-4">{mat.price}</p>
+                                                    <h3 className="ml-4">Precio de lista {mat.price}</h3>
                                                   </div>
                                                 </div>
                                                 <div className="flex flex-1 items-end justify-between text-sm">
-                                                  <p className="text-gray-500">Cantidad: {mat.quantity}</p>
-                                                  <p className="ml-4 text-gray-500">Total: {mat.price*mat.quantity}</p>
+                                                  <h3 className="text-gray-500">Cantidad: {mat.quantity}</h3>
+                                                  <h3 className="ml-4 text-gray-500">Total: {mat.price*mat.quantity}</h3>
                                                   <div className="flex">
                                                     <button type="button" onClick={()=>removingItem(mat.id)} className="font-medium text-indigo-600 hover:text-indigo-500">
                                                       Remove
@@ -109,7 +107,7 @@ function Cart() {
                                 <div className="border-t border-gray-200 py-20 px-4 sm:px-6">
                                   <div className="flex justify-between text-base font-medium text-gray-900">
                                     <p>Subtotal</p>
-                                    <p>$262.00</p>
+                                    <PriceCalculator items={itemsInCart}/>
                                   </div>
                                   <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                                   <div className="mt-6">
