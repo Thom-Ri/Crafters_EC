@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react'
-import CartContext from './CartContextProvider';
 
 function ItemCount({stock, addToCart}) {
     const [Count, setCount] = useState(0)

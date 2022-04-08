@@ -11,6 +11,7 @@ import Cart from './Componentes/Cart';
 import ItemList from './Componentes/ItemList';
 import CategoryItems from './Componentes/CategoryItems';
 import Footer from './EstructuralComponents/Footer';
+import Checkout from './Componentes/Checkout';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path=':id' element={<ItemDetailContainer/>}/>
             </Route>
             <Route path='Carrito' element={<Cart/>}/>
+            <Route path='Checkout'element={<Checkout/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

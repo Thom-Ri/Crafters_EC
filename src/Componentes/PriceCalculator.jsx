@@ -17,9 +17,9 @@ function PriceCalculator({items}) {
 
 
   return (
-    <div>
-        <h3>{TotalPrice}</h3>
-    </div>
+    <>
+        <p>{TotalPrice}</p>
+    </>
   )
 }
 
