@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../Firebase/FirebaseClient';
-import {getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import { doc, getFirestore, setDoc} from "firebase/firestore";
+import { async } from '@firebase/util';
 
 function CheckoutForm({items}){
 
@@ -14,18 +15,28 @@ function CheckoutForm({items}){
     })
 
     const HandleInputChange = (event) =>{
-        console.log(event.target.value)
         setFormInformation({
             ...FormInformation,
             [event.target.name] : event.target.value
         })
-        
+        console.log(FormInformation)
     }
-
+    const enviarDatos= async (event)=>{
+        event.preventDefault();
+        const db = getFirestore();
+        await setDoc(doc(db, "Ordenes", FormInformation.Email), {
+            Nombre: FormInformation.Nombre,
+            Apellido: FormInformation.Apellido,
+            Email: FormInformation.Email,
+            Ciudad: FormInformation.Ciudad,
+            CodigoPostal: FormInformation.CodigoPostal,
+            Orden: FormInformation.Orden
+        });
+    }
 
   return (
     <>
-        <form action="#" method="POST">
+        <form onSubmit={enviarDatos}>
             <div className="shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                     <div className="grid grid-cols-6 gap-6">
