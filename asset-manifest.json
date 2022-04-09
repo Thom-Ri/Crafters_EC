@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Crafters_EC/static/css/main.7ac2bdc5.css",
+    "main.js": "/Crafters_EC/static/js/main.ef91afee.js",
+    "static/js/787.ab4dbc35.chunk.js": "/Crafters_EC/static/js/787.ab4dbc35.chunk.js",
+    "static/media/CRAFTER.png": "/Crafters_EC/static/media/CRAFTER.d0beb656d6b24aea2b32.png",
+    "static/media/Acrilico.jpg": "/Crafters_EC/static/media/Acrilico.ff328e634c967e60183b.jpg",
+    "static/media/Acuarela.jpg": "/Crafters_EC/static/media/Acuarela.ccc141526bdba99e7252.jpg",
+    "static/media/Tablet.jpg": "/Crafters_EC/static/media/Tablet.ea6e857c7058baf6bae0.jpg",
+    "static/media/Sketchbook.png": "/Crafters_EC/static/media/Sketchbook.4f76fdbb8148c79f9fe7.png",
+    "static/media/LogoCrafter.png": "/Crafters_EC/static/media/LogoCrafter.a5b494b5fd72887b4e97.png",
+    "static/media/Lapiz.png": "/Crafters_EC/static/media/Lapiz.908106016c8d3df2e6c0.png",
+    "static/media/Pincel.jpg": "/Crafters_EC/static/media/Pincel.b0dd57813216ddc02df4.jpg",
+    "static/media/Canvas.jpg": "/Crafters_EC/static/media/Canvas.e17b6d1ad89f233893f0.jpg",
+    "index.html": "/Crafters_EC/index.html",
+    "main.7ac2bdc5.css.map": "/Crafters_EC/static/css/main.7ac2bdc5.css.map",
+    "main.ef91afee.js.map": "/Crafters_EC/static/js/main.ef91afee.js.map",
+    "787.ab4dbc35.chunk.js.map": "/Crafters_EC/static/js/787.ab4dbc35.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ac2bdc5.css",
+    "static/js/main.ef91afee.js"
+  ]
+}
