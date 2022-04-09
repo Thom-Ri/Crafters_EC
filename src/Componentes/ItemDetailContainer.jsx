@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import '../Firebase/FirebaseClient'
 import {getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
-import { async } from '@firebase/util';
 
 function ItemDetailContainer() {
     const{id} = useParams()

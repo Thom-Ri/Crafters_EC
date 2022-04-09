@@ -28,9 +28,10 @@ function ItemDetail({item}) {
                     <img src={item.img} alt="" className="object-center object-cover" />
                   </div>
                   <div className="sm:col-span-8 lg:col-span-7">
-                    <h2 className="text-2xl font-extrabold text-gray-900 sm:pr-12">{item.title}</h2>
+                    <h2 className="text-2xl text-center font-extrabold text-gray-900 sm:pr-12">{item.title}</h2>
                     <section aria-labelledby="information-heading" className="mt-2">
-                      <p className="text-2xl text-gray-900">{item.price}</p>
+                      <p className="text-2xl ml-96 text-gray-900">{item.price}</p>
+                      <h3 className="text-2xl font-serif text-gray-900 sm:pr-12">{item.description}</h3>
                     </section>
                     <section aria-labelledby="options-heading" className="mt-10">
                       {isInCart ?

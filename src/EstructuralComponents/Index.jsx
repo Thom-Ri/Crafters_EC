@@ -7,6 +7,7 @@ import Lapiz from "../media/Lapiz.png"
 import Pincel from "../media/Pincel.jpg"
 import Sketchbook from "../media/Sketchbook.png"
 import Tablet from "../media/Tablet.jpg"
+import { Link } from 'react-router-dom'
 
 function Index() {
   return (
@@ -91,13 +92,12 @@ function Index() {
                     </div>
                   </div>
                 </div>
-
-                <a
-                  href="#"
+                <Link
+                  to="Lista"
                   className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
                 >
-                  Shop Collection
-                </a>
+                  Ver productos
+                </Link>
               </div>
             </div>
           </div>
@@ -108,5 +108,3 @@ function Index() {
 }
 
 export default Index
-
-/* <img src={Presentacion} alt="" className='max-w-screen-xl mx-auto' /> */

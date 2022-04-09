@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../Firebase/FirebaseClient';
 import { doc, getFirestore, setDoc} from "firebase/firestore";
-import { async } from '@firebase/util';
+
 
 function CheckoutForm({items}){
 
@@ -9,6 +9,7 @@ function CheckoutForm({items}){
         Nombre:"",
         Apellido: "",
         Email: "",
+        Celular: "",
         CodigoPostal: "",
         Ciudad:"",
         Orden:{items}
@@ -28,10 +29,13 @@ function CheckoutForm({items}){
             Nombre: FormInformation.Nombre,
             Apellido: FormInformation.Apellido,
             Email: FormInformation.Email,
+            Celular: FormInformation.Celular,
             Ciudad: FormInformation.Ciudad,
             CodigoPostal: FormInformation.CodigoPostal,
-            Orden: FormInformation.Orden
+            Orden: FormInformation.Orden,
         });
+        alert(" Gracias por su compra!")
+        alert("Su orden ha sido emitida y archivada en nuestra sucursal para su pronto despacho a la direccion proporcionada. Su orden de compra es " + FormInformation.Email)
     }
 
   return (
@@ -95,13 +99,27 @@ function CheckoutForm({items}){
                                 onChange={HandleInputChange}
                             />
                         </div>
+                        
+                        <div className="col-span-6 sm:col-span-4">
+                            <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
+                                Numero de Celular
+                            </label>
+                            <input
+                                type="number"
+                                name="number"
+                                id="number-id"
+                                autoComplete="number"
+                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-slate-100"
+                                onChange={HandleInputChange}
+                            />
+                        </div>
 
                         <div className="col-span-6 sm:col-span-3 lg:col-span-2">
                             <label htmlFor="postal-code" className="block text-sm font-medium text-gray-700">
                                 Codigo Postal
                             </label>
                             <input
-                                type="text"
+                                type="number"
                                 name="postal-code"
                                 id="postal-code"
                                 autoComplete="postal-code"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Firebase/FirebaseClient';
 import {getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
-import { async } from '@firebase/util';
+
 
 
 function ItemList() {

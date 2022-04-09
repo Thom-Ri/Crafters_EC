@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Firebase/FirebaseClient'
 import {getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
-import { async } from '@firebase/util';
 import { Link } from 'react-router-dom';
 
 function CategoryItemsList({category}) {

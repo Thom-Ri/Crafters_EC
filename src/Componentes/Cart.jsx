@@ -78,7 +78,7 @@ function Cart() {
                                                 <p className="ml-28 text-lg leading-6 font-medium text-gray-900">{mat.title}</p>
                                               </dt>
                                               <div className="ml-28">
-                                                <dd className="mt-2 text-base text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ut quo at accusantium incidunt nemo laudantium, sit quam eius molestiae nobis placeat maxime dolorem sequi pariatur earum aliquam similique deleniti?</dd>
+                                                <dd className="mt-2 text-base text-gray-500">{mat.description}</dd>
                                                 <h3 className="font-medium text-gray-500">Precio de lista {mat.price}</h3>
                                                 <h3 className="font-medium text-gray-500">Cantidad: {mat.quantity}</h3>
                                                 <h3 className="font-medium text-gray-500">Total: {mat.price*mat.quantity}</h3>
